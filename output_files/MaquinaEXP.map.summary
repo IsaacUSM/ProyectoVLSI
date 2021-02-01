@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sat Jan 30 15:51:28 2021
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : MaquinaEXP
+Top-level Entity Name : MaquinaEXP
+Family : MAX 10
+Total logic elements : 197
+    Total combinational functions : 195
+    Dedicated logic registers : 53
+Total registers : 53
+Total pins : 13
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0
