@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MaquinaEXP
-Sat Jan 30 15:51:29 2021
+Tue Feb 02 13:44:03 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,16 +13,13 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |MaquinaEXP|lcd_controller:dut|state
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: lcd_controller:dut
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |MaquinaEXP
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -49,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jan 30 15:51:28 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb 02 13:44:03 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; MaquinaEXP                                  ;
 ; Top-level Entity Name              ; MaquinaEXP                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 197                                         ;
-;     Total combinational functions  ; 195                                         ;
-;     Dedicated logic registers      ; 53                                          ;
-; Total registers                    ; 53                                          ;
-; Total pins                         ; 13                                          ;
+; Total logic elements               ; 319                                         ;
+;     Total combinational functions  ; 154                                         ;
+;     Dedicated logic registers      ; 209                                         ;
+; Total registers                    ; 209                                         ;
+; Total pins                         ; 65                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -167,18 +164,18 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                       ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
-; MaquinaEXP.vhd                   ; yes             ; User VHDL File  ; C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd     ;         ;
-; lcd_controller.vhd               ; yes             ; User VHDL File  ; C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/lcd_controller.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; MaquinaEXP.vhd                   ; yes             ; User VHDL File  ; C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -186,82 +183,57 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 197       ;
+; Estimated Total logic elements              ; 319       ;
 ;                                             ;           ;
-; Total combinational functions               ; 195       ;
+; Total combinational functions               ; 154       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 95        ;
-;     -- 3 input functions                    ; 22        ;
-;     -- <=2 input functions                  ; 78        ;
+;     -- 4 input functions                    ; 88        ;
+;     -- 3 input functions                    ; 13        ;
+;     -- <=2 input functions                  ; 53        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 164       ;
-;     -- arithmetic mode                      ; 31        ;
+;     -- normal mode                          ; 128       ;
+;     -- arithmetic mode                      ; 26        ;
 ;                                             ;           ;
-; Total registers                             ; 53        ;
-;     -- Dedicated logic registers            ; 53        ;
+; Total registers                             ; 209       ;
+;     -- Dedicated logic registers            ; 209       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 13        ;
+; I/O pins                                    ; 65        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 53        ;
-; Total fan-out                               ; 741       ;
-; Average fan-out                             ; 2.70      ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 167       ;
+; Total fan-out                               ; 1165      ;
+; Average fan-out                             ; 2.36      ;
 +---------------------------------------------+-----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------+----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name            ; Entity Name    ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------+----------------+--------------+
-; |MaquinaEXP                ; 195 (10)            ; 53 (9)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 13   ; 0            ; 0          ; |MaquinaEXP                    ; MaquinaEXP     ; work         ;
-;    |lcd_controller:dut|    ; 185 (185)           ; 44 (44)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MaquinaEXP|lcd_controller:dut ; lcd_controller ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------+----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |MaquinaEXP                ; 154 (154)           ; 209 (209)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 65   ; 0            ; 0          ; |MaquinaEXP         ; MaquinaEXP  ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------+
-; State Machine - |MaquinaEXP|lcd_controller:dut|state                            ;
-+------------------+------------+-------------+------------------+----------------+
-; Name             ; state.send ; state.ready ; state.initialize ; state.power_up ;
-+------------------+------------+-------------+------------------+----------------+
-; state.power_up   ; 0          ; 0           ; 0                ; 0              ;
-; state.initialize ; 0          ; 0           ; 1                ; 1              ;
-; state.ready      ; 0          ; 1           ; 0                ; 1              ;
-; state.send       ; 1          ; 0           ; 0                ; 1              ;
-+------------------+------------+-------------+------------------+----------------+
-
-
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+----------------------------------------+--------------------------------------------+
-; Register name                          ; Reason for Removal                         ;
-+----------------------------------------+--------------------------------------------+
-; lcd_controller:dut|lcd_data[5]         ; Merged with lcd_controller:dut|lcd_data[4] ;
-; lcd_controller:dut|lcd_data[7]         ; Merged with lcd_controller:dut|lcd_data[6] ;
-; lcd_bus[7,8]                           ; Merged with lcd_bus[6]                     ;
-; lcd_bus[5,9]                           ; Merged with lcd_bus[4]                     ;
-; lcd_bus[6]                             ; Stuck at GND due to stuck port data_in     ;
-; lcd_bus[4]                             ; Stuck at VCC due to stuck port data_in     ;
-; lcd_controller:dut|rw                  ; Stuck at GND due to stuck port data_in     ;
-; lcd_controller:dut|lcd_data[6]         ; Stuck at GND due to stuck port data_in     ;
-; Total Number of Removed Registers = 10 ;                                            ;
-+----------------------------------------+--------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                       ;
-+---------------+---------------------------+-------------------------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register                ;
-+---------------+---------------------------+-------------------------------------------------------+
-; lcd_bus[6]    ; Stuck at GND              ; lcd_controller:dut|rw, lcd_controller:dut|lcd_data[6] ;
-;               ; due to stuck port data_in ;                                                       ;
-+---------------+---------------------------+-------------------------------------------------------+
++-------------------------------------------------------------------+
+; Registers Removed During Synthesis                                ;
++---------------------------------------+---------------------------+
+; Register name                         ; Reason for Removal        ;
++---------------------------------------+---------------------------+
+; BOTON_PRES[3]~reg0                    ; Merged with FOCA[3]       ;
+; BOTON_PRES[2]~reg0                    ; Merged with FOCA[2]       ;
+; BOTON_PRES[1]~reg0                    ; Merged with FOCA[1]       ;
+; BOTON_PRES[0]~reg0                    ; Merged with FOCA[0]       ;
+; CONTA_1MS[0]                          ; Merged with CONTA_10MS[0] ;
+; CONTA_1MS[1]                          ; Merged with CONTA_10MS[1] ;
+; CONTA_1MS[2]                          ; Merged with CONTA_10MS[2] ;
+; Total Number of Removed Registers = 7 ;                           ;
++---------------------------------------+---------------------------+
 
 
 +------------------------------------------------------+
@@ -269,53 +241,32 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 53    ;
+; Total registers                              ; 209   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 13    ;
+; Number of registers using Clock Enable       ; 133   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; lcd_controller:dut|busy                ; 2       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 17:1               ; 5 bits    ; 55 LEs        ; 50 LEs               ; 5 LEs                  ; Yes        ; |MaquinaEXP|FOCA[0]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 16:1               ; 6 bits    ; 60 LEs        ; 36 LEs               ; 24 LEs                 ; Yes        ; |MaquinaEXP|lcd_bus[3]                       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MaquinaEXP|lcd_controller:dut|rs            ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |MaquinaEXP|lcd_controller:dut|clk_count[14] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |MaquinaEXP|lcd_controller:dut|lcd_data[6]   ;
-; 14:1               ; 4 bits    ; 36 LEs        ; 28 LEs               ; 8 LEs                  ; Yes        ; |MaquinaEXP|lcd_controller:dut|lcd_data[1]   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: lcd_controller:dut ;
-+----------------+-------+----------------------------------------+
-; Parameter Name ; Value ; Type                                   ;
-+----------------+-------+----------------------------------------+
-; clk_freq       ; 50    ; Signed Integer                         ;
-; display_lines  ; '1'   ; Enumerated                             ;
-; character_font ; '0'   ; Enumerated                             ;
-; display_on_off ; '1'   ; Enumerated                             ;
-; cursor         ; '0'   ; Enumerated                             ;
-; blink          ; '1'   ; Enumerated                             ;
-; inc_dec        ; '1'   ; Enumerated                             ;
-; shift          ; '0'   ; Enumerated                             ;
-+----------------+-------+----------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |MaquinaEXP ;
++----------------+---------+-------------------------------------------------+
+; Parameter Name ; Value   ; Type                                            ;
++----------------+---------+-------------------------------------------------+
+; FREQ_CLK       ; 5000000 ; Signed Integer                                  ;
++----------------+---------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -324,22 +275,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 53                          ;
-;     ENA               ; 13                          ;
-;     plain             ; 40                          ;
-; cycloneiii_lcell_comb ; 196                         ;
-;     arith             ; 31                          ;
-;         2 data inputs ; 31                          ;
-;     normal            ; 165                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 46                          ;
-;         3 data inputs ; 22                          ;
-;         4 data inputs ; 95                          ;
+; boundary_port         ; 65                          ;
+; cycloneiii_ff         ; 209                         ;
+;     ENA               ; 133                         ;
+;     plain             ; 76                          ;
+; cycloneiii_lcell_comb ; 161                         ;
+;     arith             ; 26                          ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 135                         ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 88                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.00                       ;
-; Average LUT depth     ; 9.55                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.80                        ;
 +-----------------------+-----------------------------+
 
 
@@ -348,7 +299,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -358,33 +309,40 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Jan 30 15:51:15 2021
+    Info: Processing started: Tue Feb 02 13:43:50 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MaquinaEXP -c MaquinaEXP
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file maquinaexp.vhd
-    Info (12022): Found design unit 1: MaquinaEXP-behavior File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 9
-    Info (12023): Found entity 1: MaquinaEXP File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 3
+    Info (12022): Found design unit 1: MaquinaEXP-behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 16
+    Info (12023): Found entity 1: MaquinaEXP File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file lcd_controller.vhd
     Info (12022): Found design unit 1: lcd_controller-controller File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/lcd_controller.vhd Line: 22
     Info (12023): Found entity 1: lcd_controller File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/lcd_controller.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file divisor.vhd
+    Info (12022): Found design unit 1: divisor-behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/divisor.vhd Line: 10
+    Info (12023): Found entity 1: divisor File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/divisor.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file motor.vhd
+    Info (12022): Found design unit 1: motor-behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/motor.vhd Line: 9
+    Info (12023): Found entity 1: motor File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/motor.vhd Line: 5
 Info (12127): Elaborating entity "MaquinaEXP" for the top level hierarchy
-Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:dut" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 25
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "rw" is stuck at GND File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 6
-    Warning (13410): Pin "lcd_data[6]" is stuck at GND File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 7
-    Warning (13410): Pin "lcd_data[7]" is stuck at GND File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 7
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 215 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 202 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4808 megabytes
-    Info: Processing ended: Sat Jan 30 15:51:29 2021
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:22
+Info (21057): Implemented 390 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 60 output pins
+    Info (21061): Implemented 325 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4815 megabytes
+    Info: Processing ended: Tue Feb 02 13:44:03 2021
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:24
 
 
