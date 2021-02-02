@@ -199,7 +199,7 @@ BOTON_PRES[2] <= BOTON_PRES[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 BOTON_PRES[3] <= BOTON_PRES[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 IND <= IND~reg0.DB_MAX_OUTPUT_PORT_TYPE
 PASS <= process_11.DB_MAX_OUTPUT_PORT_TYPE
-stop_motor <= process_11.DB_MAX_OUTPUT_PORT_TYPE
+go_motor << process_11.DB_MAX_OUTPUT_PORT_TYPE
 D0[0] << D0[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 D0[1] << D0[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 D0[2] << D0[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -249,5 +249,65 @@ FANTASMA[3] << Mux7.DB_MAX_OUTPUT_PORT_TYPE
 FANTASMA[4] << Mux6.DB_MAX_OUTPUT_PORT_TYPE
 FANTASMA[5] << Mux5.DB_MAX_OUTPUT_PORT_TYPE
 FANTASMA[6] << Mux4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MaquinaEXP|motor:U1
+reloj => divisor:U1.reloj
+reset => pr_state~3.DATAIN
+stop => Selector0.IN3
+stop => Selector1.IN3
+stop => Selector2.IN3
+stop => Selector3.IN3
+stop => Selector4.IN3
+stop => Selector5.IN3
+stop => Selector6.IN3
+stop => Selector7.IN3
+stop => Selector8.IN3
+stop => Selector0.IN1
+stop => Selector1.IN1
+stop => Selector2.IN1
+stop => Selector3.IN1
+stop => Selector4.IN1
+stop => Selector5.IN1
+stop => Selector6.IN1
+stop => Selector7.IN1
+stop => Selector8.IN1
+go => ~NO_FANOUT~
+dato_motor[0] <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
+dato_motor[1] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+dato_motor[2] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+dato_motor[3] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MaquinaEXP|motor:U1|divisor:U1
+reloj => cuenta[0].CLK
+reloj => cuenta[1].CLK
+reloj => cuenta[2].CLK
+reloj => cuenta[3].CLK
+reloj => cuenta[4].CLK
+reloj => cuenta[5].CLK
+reloj => cuenta[6].CLK
+reloj => cuenta[7].CLK
+reloj => cuenta[8].CLK
+reloj => cuenta[9].CLK
+reloj => cuenta[10].CLK
+reloj => cuenta[11].CLK
+reloj => cuenta[12].CLK
+reloj => cuenta[13].CLK
+reloj => cuenta[14].CLK
+reloj => cuenta[15].CLK
+reloj => cuenta[16].CLK
+reloj => cuenta[17].CLK
+reloj => cuenta[18].CLK
+reloj => cuenta[19].CLK
+reloj => cuenta[20].CLK
+reloj => cuenta[21].CLK
+reloj => cuenta[22].CLK
+reloj => cuenta[23].CLK
+reloj => cuenta[24].CLK
+reloj => cuenta[25].CLK
+reloj => cuenta[26].CLK
+reloj => cuenta[27].CLK
+div_reloj <= cuenta[16].DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MaquinaEXP
-Tue Feb 02 13:44:03 2021
+Tue Feb 02 17:03:18 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,13 +13,15 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |MaquinaEXP
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. State Machine - |MaquinaEXP|motor:U1|pr_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |MaquinaEXP
+ 13. Port Connectivity Checks: "motor:U1"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -46,7 +48,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Feb 02 13:44:03 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb 02 17:03:18 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; MaquinaEXP                                  ;
 ; Top-level Entity Name              ; MaquinaEXP                                  ;
@@ -164,8 +166,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -175,6 +176,8 @@ https://fpgasoftware.intel.com/eula.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
 ; MaquinaEXP.vhd                   ; yes             ; User VHDL File  ; C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd ;         ;
+; divisor.vhd                      ; yes             ; User VHDL File  ; C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/divisor.vhd    ;         ;
+; motor.vhd                        ; yes             ; User VHDL File  ; C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/motor.vhd      ;         ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
 
 
@@ -220,20 +223,48 @@ https://fpgasoftware.intel.com/eula.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------+
-; Registers Removed During Synthesis                                ;
-+---------------------------------------+---------------------------+
-; Register name                         ; Reason for Removal        ;
-+---------------------------------------+---------------------------+
-; BOTON_PRES[3]~reg0                    ; Merged with FOCA[3]       ;
-; BOTON_PRES[2]~reg0                    ; Merged with FOCA[2]       ;
-; BOTON_PRES[1]~reg0                    ; Merged with FOCA[1]       ;
-; BOTON_PRES[0]~reg0                    ; Merged with FOCA[0]       ;
-; CONTA_1MS[0]                          ; Merged with CONTA_10MS[0] ;
-; CONTA_1MS[1]                          ; Merged with CONTA_10MS[1] ;
-; CONTA_1MS[2]                          ; Merged with CONTA_10MS[2] ;
-; Total Number of Removed Registers = 7 ;                           ;
-+---------------------------------------+---------------------------+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |MaquinaEXP|motor:U1|pr_state                                                                                                                       ;
++-----------------+----------------+---------------+----------------+-----------------+---------------+--------------+--------------+---------------+-----------------+
+; Name            ; pr_state.siete ; pr_state.seis ; pr_state.cinco ; pr_state.cuatro ; pr_state.tres ; pr_state.dos ; pr_state.uno ; pr_state.cero ; pr_state.inicia ;
++-----------------+----------------+---------------+----------------+-----------------+---------------+--------------+--------------+---------------+-----------------+
+; pr_state.inicia ; 0              ; 0             ; 0              ; 0               ; 0             ; 0            ; 0            ; 0             ; 0               ;
+; pr_state.cero   ; 0              ; 0             ; 0              ; 0               ; 0             ; 0            ; 0            ; 1             ; 1               ;
+; pr_state.uno    ; 0              ; 0             ; 0              ; 0               ; 0             ; 0            ; 1            ; 0             ; 1               ;
+; pr_state.dos    ; 0              ; 0             ; 0              ; 0               ; 0             ; 1            ; 0            ; 0             ; 1               ;
+; pr_state.tres   ; 0              ; 0             ; 0              ; 0               ; 1             ; 0            ; 0            ; 0             ; 1               ;
+; pr_state.cuatro ; 0              ; 0             ; 0              ; 1               ; 0             ; 0            ; 0            ; 0             ; 1               ;
+; pr_state.cinco  ; 0              ; 0             ; 1              ; 0               ; 0             ; 0            ; 0            ; 0             ; 1               ;
+; pr_state.seis   ; 0              ; 1             ; 0              ; 0               ; 0             ; 0            ; 0            ; 0             ; 1               ;
+; pr_state.siete  ; 1              ; 0             ; 0              ; 0               ; 0             ; 0            ; 0            ; 0             ; 1               ;
++-----------------+----------------+---------------+----------------+-----------------+---------------+--------------+--------------+---------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                            ;
++----------------------------------------+--------------------------------------+
+; Register name                          ; Reason for Removal                   ;
++----------------------------------------+--------------------------------------+
+; motor:U1|divisor:U1|cuenta[0..27]      ; Stuck at GND due to stuck port clock ;
+; BOTON_PRES[3]~reg0                     ; Merged with FOCA[3]                  ;
+; BOTON_PRES[2]~reg0                     ; Merged with FOCA[2]                  ;
+; BOTON_PRES[1]~reg0                     ; Merged with FOCA[1]                  ;
+; BOTON_PRES[0]~reg0                     ; Merged with FOCA[0]                  ;
+; motor:U1|pr_state.inicia               ; Stuck at GND due to stuck port clear ;
+; motor:U1|pr_state.cero                 ; Stuck at GND due to stuck port clear ;
+; motor:U1|pr_state.uno                  ; Stuck at GND due to stuck port clear ;
+; motor:U1|pr_state.dos                  ; Stuck at GND due to stuck port clear ;
+; motor:U1|pr_state.tres                 ; Stuck at GND due to stuck port clear ;
+; motor:U1|pr_state.cuatro               ; Stuck at GND due to stuck port clear ;
+; motor:U1|pr_state.cinco                ; Stuck at GND due to stuck port clear ;
+; motor:U1|pr_state.seis                 ; Stuck at GND due to stuck port clear ;
+; motor:U1|pr_state.siete                ; Stuck at GND due to stuck port clear ;
+; CONTA_1MS[0]                           ; Merged with CONTA_10MS[0]            ;
+; CONTA_1MS[1]                           ; Merged with CONTA_10MS[1]            ;
+; CONTA_1MS[2]                           ; Merged with CONTA_10MS[2]            ;
+; Total Number of Removed Registers = 44 ;                                      ;
++----------------------------------------+--------------------------------------+
 
 
 +------------------------------------------------------+
@@ -270,6 +301,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "motor:U1"                                                                                 ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; reloj      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; reset      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; stop       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dato_motor ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -299,7 +342,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -309,7 +352,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Feb 02 13:43:50 2021
+    Info: Processing started: Tue Feb 02 17:03:04 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MaquinaEXP -c MaquinaEXP
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -326,12 +369,15 @@ Info (12021): Found 2 design units, including 1 entities, in source file motor.v
     Info (12022): Found design unit 1: motor-behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/motor.vhd Line: 9
     Info (12023): Found entity 1: motor File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/motor.vhd Line: 5
 Info (12127): Elaborating entity "MaquinaEXP" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
-Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
-Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
-Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
-Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
-Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(274): signal "D0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 274
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(280): signal "D5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 280
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(280): signal "D4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 280
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(280): signal "D3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 280
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(280): signal "D2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 280
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(280): signal "D1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 280
+Warning (10492): VHDL Process Statement warning at MaquinaEXP.vhd(280): signal "D0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 280
+Info (12128): Elaborating entity "motor" for hierarchy "motor:U1" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 51
+Warning (10036): Verilog HDL or VHDL warning at motor.vhd(19): object "stop_motor" assigned a value but never read File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/motor.vhd Line: 19
+Info (12128): Elaborating entity "divisor" for hierarchy "motor:U1|divisor:U1" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/motor.vhd Line: 21
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -339,10 +385,10 @@ Info (21057): Implemented 390 device resources after synthesis - the final resou
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 60 output pins
     Info (21061): Implemented 325 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4815 megabytes
-    Info: Processing ended: Tue Feb 02 13:44:03 2021
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:24
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4821 megabytes
+    Info: Processing ended: Tue Feb 02 17:03:18 2021
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:23
 
 

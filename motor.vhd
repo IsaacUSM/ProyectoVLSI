@@ -3,7 +3,7 @@ Use IEEE.Std_logic_1164.all;
 Use IEEE.Std_logic_arith.all;
 Use IEEE.Std_logic_unsigned.all;
 Entity motor is
-	Port (reloj, reset, stop: in std_logic;
+	Port (reloj, reset, stop, go: in std_logic;
 			dato_motor: out std_logic_vector(3 downto 0));
 End motor;
 Architecture behavioral of motor is
@@ -16,6 +16,7 @@ Architecture behavioral of motor is
 	Signal reloj_1 : std_logic;
 	SIGNAL cuenta : INTEGER RANGE 0 TO 4461 := 0;
 	SIGNAL vueltas : INTEGER RANGE 0 TO 4 := 0;
+	SIGNAL stop_motor : std_logic;
 begin
 	U1 : divisor Port map(reloj, reloj_1);
 	Process (reset, reloj_1)
@@ -27,16 +28,20 @@ begin
 		End if;
 	End Process;
 	
-	Process (reset, reloj_1, cuenta, vueltas)
+	Process (reset, reloj_1, cuenta, vueltas, go)
 	begin
-		if reloj_1 ='1' and reloj_1'event then
-			cuenta <= cuenta + 1;
-			If cuenta = 4460 then
-				cuenta <= 0;
-				vueltas <= vueltas + 1;
-			else
-				If vueltas = 3 then
-					vueltas <= 0;
+		stop_motor <= '1';
+		if go='1' then
+			if reloj_1 ='1' and reloj_1'event then
+				cuenta <= cuenta + 1;
+				If cuenta = 4460 then
+					cuenta <= 0;
+					vueltas <= vueltas + 1;
+				else
+					If vueltas = 3 then
+						vueltas <= 0;
+						stop_motor <= '0';
+					end if;
 				end if;
 			end if;
 		end if;

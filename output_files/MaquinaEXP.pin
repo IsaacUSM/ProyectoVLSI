@@ -330,7 +330,7 @@ D4[3]                        : K15       : output : 2.5 V             :         
 VCCIO6                       : K16       : power  :                   : 2.5V    : 6         :                
 VCCIO6                       : K17       : power  :                   : 2.5V    : 6         :                
 PASS                         : K18       : output : 2.5 V             :         : 6         : N              
-stop_motor                   : K19       : output : 2.5 V             :         : 6         : N              
+go_motor                     : K19       : output : 2.5 V             :         : 6         : N              
 D1[0]                        : K20       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT               : K21       :        :                   :         : 6         :                
 RESERVED_INPUT               : K22       :        :                   :         : 6         :                

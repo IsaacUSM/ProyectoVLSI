@@ -1,5 +1,5 @@
 Fitter report for MaquinaEXP
-Tue Feb 02 13:44:28 2021
+Tue Feb 02 17:03:43 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Feb 02 13:44:28 2021       ;
+; Fitter Status                      ; Successful - Tue Feb 02 17:03:43 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; MaquinaEXP                                  ;
 ; Top-level Entity Name              ; MaquinaEXP                                  ;
@@ -154,13 +154,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.03        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.0%      ;
-;     Processors 3-4         ;   0.9%      ;
+;     Processor 2            ;   0.7%      ;
+;     Processors 3-4         ;   0.7%      ;
 +----------------------------+-------------+
 
 
@@ -409,7 +409,7 @@ The pin-out file can be found in C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/output
 ; FILAS[3]      ; A16   ; 7        ; 60           ; 54           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; IND           ; A15   ; 7        ; 58           ; 54           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; PASS          ; K18   ; 6        ; 78           ; 42           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; stop_motor    ; K19   ; 6        ; 78           ; 42           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; go_motor      ; K19   ; 6        ; 78           ; 42           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -711,7 +711,7 @@ The pin-out file can be found in C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/output
 ; K16      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; K17      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; K18      ; 360        ; 6        ; PASS                                           ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
-; K19      ; 361        ; 6        ; stop_motor                                     ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K19      ; 361        ; 6        ; go_motor                                       ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; K20      ; 363        ; 6        ; D1[0]                                          ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; K21      ; 326        ; 6        ; RESERVED_INPUT                                 ;        ;                       ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; K22      ; 324        ; 6        ; RESERVED_INPUT                                 ;        ;                       ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -954,7 +954,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; BOTON_PRES[3] ; Incomplete set of assignments ;
 ; IND           ; Incomplete set of assignments ;
 ; PASS          ; Incomplete set of assignments ;
-; stop_motor    ; Incomplete set of assignments ;
+; go_motor      ; Incomplete set of assignments ;
 ; D0[0]         ; Incomplete set of assignments ;
 ; D0[1]         ; Incomplete set of assignments ;
 ; D0[2]         ; Incomplete set of assignments ;
@@ -1019,7 +1019,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; BOTON_PRES[3] ; Missing location assignment   ;
 ; IND           ; Missing location assignment   ;
 ; PASS          ; Missing location assignment   ;
-; stop_motor    ; Missing location assignment   ;
+; go_motor      ; Missing location assignment   ;
 ; D0[0]         ; Missing location assignment   ;
 ; D0[1]         ; Missing location assignment   ;
 ; D0[2]         ; Missing location assignment   ;
@@ -1102,7 +1102,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; BOTON_PRES[3] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; IND           ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; PASS          ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; stop_motor    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; go_motor      ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; D0[0]         ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; D0[1]         ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; D0[2]         ; Output   ; --            ; --            ; --                    ; --  ; --   ;
@@ -1438,7 +1438,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; BOTON_PRES[3]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; IND                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; PASS               ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; stop_motor         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; go_motor           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; D0[0]              ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; D0[1]              ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; D0[2]              ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1602,7 +1602,7 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node CLK~input (placed in PIN M8 (CLK1n, DIFFIO_RX_L36n, DIFFOUT_L36n, High_Speed)) File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 6
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
-Info (176353): Automatically promoted node DESPLAZA  File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 44
+Info (176353): Automatically promoted node DESPLAZA  File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/MaquinaEXP.vhd Line: 49
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -1634,7 +1634,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.29 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.28 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1642,8 +1642,8 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info (144001): Generated suppressed messages file C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/output_files/MaquinaEXP.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5662 megabytes
-    Info: Processing ended: Tue Feb 02 13:44:29 2021
+    Info: Peak virtual memory: 5664 megabytes
+    Info: Processing ended: Tue Feb 02 17:03:44 2021
     Info: Elapsed time: 00:00:25
     Info: Total CPU time (on all processors): 00:00:27
 

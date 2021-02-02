@@ -9,11 +9,16 @@ entity MaquinaEXP is
 			BOTON_PRES: out std_logic_vector (3 downto 0);
 			IND: out std_logic;
 			PASS: OUT STD_LOGIC;
-			stop_motor: OUT STD_LOGIC:='0';
+			go_motor: buffer STD_LOGIC;
 			D0,D1,D2,D3,D4,D5,FANTASMA : BUFFER STD_LOGIC_VECTOR (6 DOWNTO 0));
 end MaquinaEXP;
 
 architecture behavioral of MaquinaEXP is
+	Component motor is
+	Port (reloj, reset, stop: in std_logic:='0';
+			go: in std_logic:='1';
+			dato_motor: out std_logic_vector(3 downto 0));
+	end Component;
 	CONSTANT DELAY_1MS : INTEGER := (FREQ_CLK/1000)-1;
 	CONSTANT DELAY_10MS : INTEGER := (FREQ_CLK/100)-1;
 	SIGNAL CONTA_1MS: INTEGER RANGE 0 TO DELAY_1MS := 0;
@@ -43,6 +48,7 @@ architecture behavioral of MaquinaEXP is
 	SIGNAL FOCA : STD_LOGIC_VECTOR(4 DOWNTO 0) := "00000";
 	SIGNAL DESPLAZA : STD_LOGIC := '0';
 	BEGIN
+		U1 : motor Port map(go => go_motor);
 		FILAS <= FILA_REG_S;
 		--RETARDO 1 MS--
 		PROCESS(CLK)
@@ -273,10 +279,10 @@ architecture behavioral of MaquinaEXP is
 		BEGIN
 			IF D5 = "1111001" AND D4 = "0010010" AND D3 = "0011000" AND D2 = "0100001" AND D1 = "0001000" AND D0 = "0011100" THEN
 				PASS <= '1';
-				stop_motor <= '1';
+				go_motor <= '1';
 			ELSE
 				PASS <= '0';
-				stop_motor <= '0';
+				go_motor <= '0';
 			END IF;
 		END PROCESS;
 		

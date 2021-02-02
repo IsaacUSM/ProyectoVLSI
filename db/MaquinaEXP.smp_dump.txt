@@ -1,7 +1,12 @@
 
-State Machine - |MaquinaEXP|lcd_controller:dut|state
-Name state.send state.ready state.initialize state.power_up 
-state.power_up 0 0 0 0 
-state.initialize 0 0 1 1 
-state.ready 0 1 0 1 
-state.send 1 0 0 1 
+State Machine - |MaquinaEXP|motor:U1|pr_state
+Name pr_state.siete pr_state.seis pr_state.cinco pr_state.cuatro pr_state.tres pr_state.dos pr_state.uno pr_state.cero pr_state.inicia 
+pr_state.inicia 0 0 0 0 0 0 0 0 0 
+pr_state.cero 0 0 0 0 0 0 0 1 1 
+pr_state.uno 0 0 0 0 0 0 1 0 1 
+pr_state.dos 0 0 0 0 0 1 0 0 1 
+pr_state.tres 0 0 0 0 1 0 0 0 1 
+pr_state.cuatro 0 0 0 1 0 0 0 0 1 
+pr_state.cinco 0 0 1 0 0 0 0 0 1 
+pr_state.seis 0 1 0 0 0 0 0 0 1 
+pr_state.siete 1 0 0 0 0 0 0 0 1 
