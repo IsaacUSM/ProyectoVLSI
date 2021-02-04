@@ -4,39 +4,123 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Dado[0]",
+					"name" : "main_vsync",
 					"strict" : false
 				},
 				{
-					"name" : "Dado[1]",
+					"name" : "main_hsync",
 					"strict" : false
 				},
 				{
-					"name" : "Dado[2]",
+					"name" : "manzana_aleatoria[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Dado[3]",
+					"name" : "manzana_aleatoria[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Dado[4]",
+					"name" : "manzana_aleatoria[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Dado[5]",
+					"name" : "manzana_aleatoria[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Dado[6]",
+					"name" : "manzana_aleatoria[4]",
 					"strict" : false
 				},
 				{
-					"name" : "boton",
+					"name" : "manzana_aleatoria[5]",
 					"strict" : false
 				},
 				{
-					"name" : "reloj",
+					"name" : "manzana_aleatoria[6]",
+					"strict" : false
+				},
+				{
+					"name" : "manzana_aleatoria[7]",
+					"strict" : false
+				},
+				{
+					"name" : "manzana_aleatoria[8]",
+					"strict" : false
+				},
+				{
+					"name" : "manzana_aleatoria[9]",
+					"strict" : false
+				},
+				{
+					"name" : "r[0]",
+					"strict" : false
+				},
+				{
+					"name" : "r[1]",
+					"strict" : false
+				},
+				{
+					"name" : "r[2]",
+					"strict" : false
+				},
+				{
+					"name" : "r[3]",
+					"strict" : false
+				},
+				{
+					"name" : "g[0]",
+					"strict" : false
+				},
+				{
+					"name" : "g[1]",
+					"strict" : false
+				},
+				{
+					"name" : "g[2]",
+					"strict" : false
+				},
+				{
+					"name" : "g[3]",
+					"strict" : false
+				},
+				{
+					"name" : "b[0]",
+					"strict" : false
+				},
+				{
+					"name" : "b[1]",
+					"strict" : false
+				},
+				{
+					"name" : "b[2]",
+					"strict" : false
+				},
+				{
+					"name" : "b[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "up",
+					"strict" : false
+				},
+				{
+					"name" : "down",
+					"strict" : false
+				},
+				{
+					"name" : "leftt",
+					"strict" : false
+				},
+				{
+					"name" : "rightt",
 					"strict" : false
 				}
 			]

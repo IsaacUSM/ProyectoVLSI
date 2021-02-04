@@ -1,0 +1,17 @@
+
+State Machine - |snake|game_logic:g3|temp_cell
+Name temp_cell.snake_tail temp_cell.food temp_cell.space temp_cell.border 
+temp_cell.border 0 0 0 0 
+temp_cell.space 0 0 1 1 
+temp_cell.food 0 1 0 1 
+temp_cell.snake_tail 1 0 0 1 
+
+State Machine - |snake|game_logic:g3|game
+Name game.vga game.game_over game.generatefood game.move game.check game.directioncheck game.ready 
+game.ready 0 0 0 0 0 0 0 
+game.directioncheck 0 0 0 0 0 1 1 
+game.check 0 0 0 0 1 0 1 
+game.move 0 0 0 1 0 0 1 
+game.generatefood 0 0 1 0 0 0 1 
+game.game_over 0 1 0 0 0 0 1 
+game.vga 1 0 0 0 0 0 1 

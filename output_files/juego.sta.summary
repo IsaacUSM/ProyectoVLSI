@@ -2,76 +2,184 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'boton'
-Slack : -62.854
-TNS   : -1211.755
+Type  : Slow 1200mV 85C Model Setup 'clock_divider:g1|pulso'
+Slack : -18.236
+TNS   : -2361.347
 
-Type  : Slow 1200mV 85C Model Setup 'reloj'
-Slack : -3.762
-TNS   : -57.683
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -1.958
+TNS   : -23.188
 
-Type  : Slow 1200mV 85C Model Hold 'boton'
-Slack : 0.522
+Type  : Slow 1200mV 85C Model Setup 'clock_divider:g1|counter[19]'
+Slack : -1.138
+TNS   : -6.468
+
+Type  : Slow 1200mV 85C Model Hold 'clock_divider:g1|pulso'
+Slack : 0.323
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'reloj'
-Slack : 0.634
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.356
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'reloj'
-Slack : -3.000
-TNS   : -31.060
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'boton'
-Slack : -3.000
-TNS   : -3.000
-
-Type  : Slow 1200mV 0C Model Setup 'boton'
-Slack : -57.146
-TNS   : -1099.357
-
-Type  : Slow 1200mV 0C Model Setup 'reloj'
-Slack : -3.360
-TNS   : -51.541
-
-Type  : Slow 1200mV 0C Model Hold 'boton'
-Slack : 0.487
+Type  : Slow 1200mV 85C Model Hold 'clock_divider:g1|counter[19]'
+Slack : 0.441
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'reloj'
-Slack : 0.588
+Type  : Slow 1200mV 85C Model Recovery 'clock_divider:g1|pulso'
+Slack : -3.186
+TNS   : -763.330
+
+Type  : Slow 1200mV 85C Model Recovery 'clock_divider:g1|counter[19]'
+Slack : -2.926
+TNS   : -52.236
+
+Type  : Slow 1200mV 85C Model Recovery 'clk'
+Slack : -2.398
+TNS   : -45.795
+
+Type  : Slow 1200mV 85C Model Removal 'clk'
+Slack : 2.171
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'reloj'
-Slack : -3.000
-TNS   : -31.060
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'boton'
-Slack : -3.000
-TNS   : -3.000
-
-Type  : Fast 1200mV 0C Model Setup 'boton'
-Slack : -25.490
-TNS   : -481.442
-
-Type  : Fast 1200mV 0C Model Setup 'reloj'
-Slack : -1.054
-TNS   : -13.784
-
-Type  : Fast 1200mV 0C Model Hold 'boton'
-Slack : 0.196
+Type  : Slow 1200mV 85C Model Removal 'clock_divider:g1|counter[19]'
+Slack : 2.716
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'reloj'
-Slack : 0.245
+Type  : Slow 1200mV 85C Model Removal 'clock_divider:g1|pulso'
+Slack : 3.042
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reloj'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -23.830
+TNS   : -32.463
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'boton'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_divider:g1|pulso'
+Slack : -1.403
+TNS   : -433.527
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_divider:g1|counter[19]'
+Slack : -1.403
+TNS   : -30.866
+
+Type  : Slow 1200mV 0C Model Setup 'clock_divider:g1|pulso'
+Slack : -16.519
+TNS   : -2170.522
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -1.622
+TNS   : -19.011
+
+Type  : Slow 1200mV 0C Model Setup 'clock_divider:g1|counter[19]'
+Slack : -0.955
+TNS   : -5.329
+
+Type  : Slow 1200mV 0C Model Hold 'clock_divider:g1|pulso'
+Slack : 0.290
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.322
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock_divider:g1|counter[19]'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'clock_divider:g1|pulso'
+Slack : -2.824
+TNS   : -675.733
+
+Type  : Slow 1200mV 0C Model Recovery 'clock_divider:g1|counter[19]'
+Slack : -2.585
+TNS   : -46.132
+
+Type  : Slow 1200mV 0C Model Recovery 'clk'
+Slack : -2.081
+TNS   : -39.645
+
+Type  : Slow 1200mV 0C Model Removal 'clk'
+Slack : 1.928
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'clock_divider:g1|counter[19]'
+Slack : 2.441
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'clock_divider:g1|pulso'
+Slack : 2.753
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -3.000
+TNS   : -32.463
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_divider:g1|pulso'
+Slack : -1.403
+TNS   : -433.527
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_divider:g1|counter[19]'
+Slack : -1.403
+TNS   : -30.866
+
+Type  : Fast 1200mV 0C Model Setup 'clock_divider:g1|pulso'
+Slack : -6.633
+TNS   : -895.860
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.794
+TNS   : -1.133
+
+Type  : Fast 1200mV 0C Model Setup 'clock_divider:g1|counter[19]'
+Slack : 0.070
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock_divider:g1|pulso'
+Slack : 0.140
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock_divider:g1|counter[19]'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'clock_divider:g1|pulso'
+Slack : -1.013
+TNS   : -237.689
+
+Type  : Fast 1200mV 0C Model Recovery 'clock_divider:g1|counter[19]'
+Slack : -0.922
+TNS   : -16.414
+
+Type  : Fast 1200mV 0C Model Recovery 'clk'
+Slack : -0.656
+TNS   : -12.210
+
+Type  : Fast 1200mV 0C Model Removal 'clk'
+Slack : 1.093
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'clock_divider:g1|counter[19]'
+Slack : 1.379
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'clock_divider:g1|pulso'
+Slack : 1.519
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -24.902
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_divider:g1|pulso'
+Slack : -1.000
+TNS   : -309.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_divider:g1|counter[19]'
+Slack : -1.000
+TNS   : -22.000
 
 ------------------------------------------------------------
