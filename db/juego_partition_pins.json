@@ -12,6 +12,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "FIL[0]",
+					"strict" : false
+				},
+				{
+					"name" : "FIL[1]",
+					"strict" : false
+				},
+				{
+					"name" : "FIL[2]",
+					"strict" : false
+				},
+				{
+					"name" : "FIL[3]",
+					"strict" : false
+				},
+				{
 					"name" : "manzana_aleatoria[0]",
 					"strict" : false
 				},
@@ -100,7 +116,47 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "Dis0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Dis0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Dis0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Dis0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Dis0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Dis0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Dis0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Dis1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Dis1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Dis1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Dis1[5]",
 					"strict" : false
 				},
 				{
@@ -108,19 +164,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "up",
+					"name" : "COLUM[2]",
 					"strict" : false
 				},
 				{
-					"name" : "down",
+					"name" : "COLUM[3]",
 					"strict" : false
 				},
 				{
-					"name" : "leftt",
+					"name" : "COLUM[1]",
 					"strict" : false
 				},
 				{
-					"name" : "rightt",
+					"name" : "COLUM[0]",
 					"strict" : false
 				}
 			]

@@ -14,8 +14,7 @@ PORT(	clk:in std_logic;
 		hor: in integer range 0 to 799;
 		ver: in integer range 0 to 520;
 		game_over_reset:out std_logic;
-		current_game_state: out game_state;
-		Display0, Display1: buffer std_logic_vector(6 downto 0));
+		current_game_state: out game_state);
 end game_logic;
 
 architecture Behavioral of game_logic is
@@ -29,14 +28,11 @@ architecture Behavioral of game_logic is
 	signal logic_tick: std_logic:='0';
 	signal snake: snake:= ((0)=>577,(1)=>578,(2)=>579,(3)=>580,others=>0);
 	signal snake_length: integer range 0 to 23:=3;
-	signal snake_l: integer range 0 to 23:=0;
 	shared variable next_cell: integer range 0 to 639;
 	signal currentfood: integer range 0 to 639:=100;
 	signal count:integer range 0 to 63:=0;
 	signal temp: std_logic:='0';
 	signal tick_time: integer range 0 to 40 := 40;
-	signal aux, aux2 : STD_LOGIC_VECTOR(3 DOWNTO 0) := "0000";
-	signal c,d: STD_LOGIC;
 	begin
 	snake_timer:process(vsync,reset,clk)
 	begin
@@ -179,7 +175,7 @@ architecture Behavioral of game_logic is
 						state <= a;
 					end if;
 				end if;
-			elsif game = generatefood then 
+			elsif game = generatefood then --aca podemos meter el contador 
 				if tick_time /= 2 then
 					tick_time <= tick_time - 2;
 				end if;
@@ -210,29 +206,4 @@ architecture Behavioral of game_logic is
 	end process;
 	cell_out <= temp_cell;
 	current_game_state <= game;
-	snake_l<=snake_length-3;
-	WITH snake_l SELECT
-		Display0<=  "1000000" WHEN 0|10,-- 0
-						"1111001" WHEN 1|11,-- 1
-						"0100100" WHEN 2|12,-- 2
-						"0110000" WHEN 3|13,-- 3
-						"0011001" WHEN 4|14,-- 4
-						"0010010" WHEN 5|15,-- 5
-						"0000010" WHEN 6|16,-- 6
-						"0111000" WHEN 7|17,-- 7
-						"0000000" WHEN 8|18,-- 8
-						"0011000" WHEN 9|19,-- 9
-						"1111111" WHEN OTHERS;
-	with snake_l SELECT
-		Display1 <= "1111001" WHEN 10,-- 0
-						"1111001" WHEN 11,-- 1
-						"1111001" WHEN 12,-- 2
-						"1111001" WHEN 13,-- 3
-						"1111001" WHEN 14,-- 4
-						"1111001" WHEN 15,-- 5
-						"1111001" WHEN 16,-- 6
-						"1111001" WHEN 17,-- 7
-						"1111001" WHEN 18,-- 8
-						"1111001" WHEN 19,-- 9
-						"1000000" WHEN OTHERS;
 end Behavioral;

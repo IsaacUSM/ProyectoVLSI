@@ -1,5 +1,5 @@
 Analysis & Synthesis report for juego
-Thu Feb 04 11:16:23 2021
+Thu Feb 04 13:21:21 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -19,14 +19,16 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  11. General Register Statistics
  12. Inverted Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for Inferred Entity Instance: pseudo_random_generator:g4|lpm_divide:Mod0
- 15. Parameter Settings for Inferred Entity Instance: game_logic:g3|lpm_divide:Div2
- 16. Parameter Settings for Inferred Entity Instance: game_logic:g3|lpm_divide:Div1
- 17. Parameter Settings for Inferred Entity Instance: game_logic:g3|lpm_divide:Mod0
- 18. Parameter Settings for Inferred Entity Instance: game_logic:g3|lpm_divide:Div0
- 19. Post-Synthesis Netlist Statistics for Top Partition
- 20. Elapsed Time Per Partition
- 21. Analysis & Synthesis Messages
+ 14. Parameter Settings for User Entity Instance: Teclado:g6
+ 15. Parameter Settings for Inferred Entity Instance: pseudo_random_generator:g4|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: game_logic:g3|lpm_divide:Div2
+ 17. Parameter Settings for Inferred Entity Instance: game_logic:g3|lpm_divide:Div1
+ 18. Parameter Settings for Inferred Entity Instance: game_logic:g3|lpm_divide:Mod0
+ 19. Parameter Settings for Inferred Entity Instance: game_logic:g3|lpm_divide:Div0
+ 20. Port Connectivity Checks: "Teclado:g6"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -53,16 +55,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb 04 11:16:23 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Feb 04 13:21:21 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; juego                                       ;
 ; Top-level Entity Name              ; snake                                       ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1,788                                       ;
-;     Total combinational functions  ; 1,740                                       ;
-;     Dedicated logic registers      ; 352                                         ;
-; Total registers                    ; 352                                         ;
-; Total pins                         ; 30                                          ;
+; Total logic elements               ; 1,921                                       ;
+;     Total combinational functions  ; 1,833                                       ;
+;     Dedicated logic registers      ; 427                                         ;
+; Total registers                    ; 427                                         ;
+; Total pins                         ; 47                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -173,7 +175,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -189,6 +191,7 @@ https://fpgasoftware.intel.com/eula.
 ; game_logic.vhd                   ; yes             ; User VHDL File               ; C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd                    ;         ;
 ; debouncer_circuit.vhd            ; yes             ; User VHDL File               ; C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/debouncer_circuit.vhd             ;         ;
 ; clock_divider.vhd                ; yes             ; User VHDL File               ; C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/clock_divider.vhd                 ;         ;
+; Teclado.vhd                      ; yes             ; User VHDL File               ; C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/Teclado.vhd                       ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
@@ -209,30 +212,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Estimated Total logic elements              ; 1,788                  ;
+; Estimated Total logic elements              ; 1,921                  ;
 ;                                             ;                        ;
-; Total combinational functions               ; 1740                   ;
+; Total combinational functions               ; 1833                   ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 1184                   ;
-;     -- 3 input functions                    ; 242                    ;
-;     -- <=2 input functions                  ; 314                    ;
+;     -- 4 input functions                    ; 1253                   ;
+;     -- 3 input functions                    ; 220                    ;
+;     -- <=2 input functions                  ; 360                    ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 1539                   ;
-;     -- arithmetic mode                      ; 201                    ;
+;     -- normal mode                          ; 1606                   ;
+;     -- arithmetic mode                      ; 227                    ;
 ;                                             ;                        ;
-; Total registers                             ; 352                    ;
-;     -- Dedicated logic registers            ; 352                    ;
+; Total registers                             ; 427                    ;
+;     -- Dedicated logic registers            ; 427                    ;
 ;     -- I/O registers                        ; 0                      ;
 ;                                             ;                        ;
-; I/O pins                                    ; 30                     ;
+; I/O pins                                    ; 47                     ;
 ;                                             ;                        ;
 ; Embedded Multiplier 9-bit elements          ; 0                      ;
 ;                                             ;                        ;
 ; Maximum fan-out node                        ; clock_divider:g1|pulso ;
 ; Maximum fan-out                             ; 310                    ;
-; Total fan-out                               ; 7389                   ;
-; Average fan-out                             ; 3.43                   ;
+; Total fan-out                               ; 7916                   ;
+; Average fan-out                             ; 3.36                   ;
 +---------------------------------------------+------------------------+
 
 
@@ -241,10 +244,11 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                               ; Entity Name             ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
-; |snake                                    ; 1740 (1)            ; 352 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 30   ; 0            ; 0          ; |snake                                                                                                                            ; snake                   ; work         ;
+; |snake                                    ; 1833 (1)            ; 427 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 47   ; 0            ; 0          ; |snake                                                                                                                            ; snake                   ; work         ;
+;    |Teclado:g6|                           ; 76 (76)             ; 75 (75)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|Teclado:g6                                                                                                                 ; Teclado                 ; work         ;
 ;    |clock_divider:g1|                     ; 21 (21)             ; 21 (21)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|clock_divider:g1                                                                                                           ; clock_divider           ; work         ;
 ;    |debouncer_circuit:g2|                 ; 7 (7)               ; 22 (22)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|debouncer_circuit:g2                                                                                                       ; debouncer_circuit       ; work         ;
-;    |game_logic:g3|                        ; 1610 (1251)         ; 256 (256)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3                                                                                                              ; game_logic              ; work         ;
+;    |game_logic:g3|                        ; 1627 (1271)         ; 256 (256)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3                                                                                                              ; game_logic              ; work         ;
 ;       |lpm_divide:Div0|                   ; 85 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div0                                                                                              ; lpm_divide              ; work         ;
 ;          |lpm_divide_jtl:auto_generated|  ; 85 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div0|lpm_divide_jtl:auto_generated                                                                ; lpm_divide_jtl          ; work         ;
 ;             |sign_div_unsign_llh:divider| ; 85 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div0|lpm_divide_jtl:auto_generated|sign_div_unsign_llh:divider                                    ; sign_div_unsign_llh     ; work         ;
@@ -253,10 +257,10 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_jtl:auto_generated|  ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div1|lpm_divide_jtl:auto_generated                                                                ; lpm_divide_jtl          ; work         ;
 ;             |sign_div_unsign_llh:divider| ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div1|lpm_divide_jtl:auto_generated|sign_div_unsign_llh:divider                                    ; sign_div_unsign_llh     ; work         ;
 ;                |alt_u_div_khe:divider|    ; 72 (72)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div1|lpm_divide_jtl:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider              ; alt_u_div_khe           ; work         ;
-;       |lpm_divide:Div2|                   ; 78 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div2                                                                                              ; lpm_divide              ; work         ;
-;          |lpm_divide_jtl:auto_generated|  ; 78 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div2|lpm_divide_jtl:auto_generated                                                                ; lpm_divide_jtl          ; work         ;
-;             |sign_div_unsign_llh:divider| ; 78 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div2|lpm_divide_jtl:auto_generated|sign_div_unsign_llh:divider                                    ; sign_div_unsign_llh     ; work         ;
-;                |alt_u_div_khe:divider|    ; 78 (78)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div2|lpm_divide_jtl:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider              ; alt_u_div_khe           ; work         ;
+;       |lpm_divide:Div2|                   ; 75 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div2                                                                                              ; lpm_divide              ; work         ;
+;          |lpm_divide_jtl:auto_generated|  ; 75 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div2|lpm_divide_jtl:auto_generated                                                                ; lpm_divide_jtl          ; work         ;
+;             |sign_div_unsign_llh:divider| ; 75 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div2|lpm_divide_jtl:auto_generated|sign_div_unsign_llh:divider                                    ; sign_div_unsign_llh     ; work         ;
+;                |alt_u_div_khe:divider|    ; 75 (75)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Div2|lpm_divide_jtl:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider              ; alt_u_div_khe           ; work         ;
 ;       |lpm_divide:Mod0|                   ; 124 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Mod0                                                                                              ; lpm_divide              ; work         ;
 ;          |lpm_divide_2nl:auto_generated|  ; 124 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Mod0|lpm_divide_2nl:auto_generated                                                                ; lpm_divide_2nl          ; work         ;
 ;             |sign_div_unsign_1nh:divider| ; 124 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |snake|game_logic:g3|lpm_divide:Mod0|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider                                    ; sign_div_unsign_1nh     ; work         ;
@@ -306,8 +310,11 @@ Encoding Type:  One-Hot
 ; Register name                         ; Reason for Removal                               ;
 +---------------------------------------+--------------------------------------------------+
 ; game_logic:g3|temp_cell.snake_tail    ; Lost fanout                                      ;
+; Teclado:g6|CONTA_1MS[0]               ; Merged with Teclado:g6|CONTA_10MS[0]             ;
+; Teclado:g6|CONTA_1MS[1]               ; Merged with Teclado:g6|CONTA_10MS[1]             ;
+; Teclado:g6|CONTA_1MS[2]               ; Merged with Teclado:g6|CONTA_10MS[2]             ;
 ; pseudo_random_generator:g4|temp_v[1]  ; Merged with pseudo_random_generator:g4|random[1] ;
-; Total Number of Removed Registers = 2 ;                                                  ;
+; Total Number of Removed Registers = 5 ;                                                  ;
 +---------------------------------------+--------------------------------------------------+
 
 
@@ -316,12 +323,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 352   ;
+; Total registers                              ; 427   ;
 ; Number of registers using Synchronous Clear  ; 6     ;
 ; Number of registers using Synchronous Load   ; 7     ;
 ; Number of registers using Asynchronous Clear ; 292   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 293   ;
+; Number of registers using Clock Enable       ; 338   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -331,28 +338,28 @@ Encoding Type:  One-Hot
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; game_logic:g3|snake_length[1]           ; 70      ;
-; game_logic:g3|snake_length[0]           ; 70      ;
+; game_logic:g3|snake_length[0]           ; 83      ;
+; game_logic:g3|snake_length[1]           ; 82      ;
 ; game_logic:g3|currentfood[2]            ; 2       ;
 ; game_logic:g3|currentfood[5]            ; 2       ;
 ; game_logic:g3|currentfood[6]            ; 2       ;
 ; game_logic:g3|tick_time[3]              ; 3       ;
 ; game_logic:g3|tick_time[5]              ; 4       ;
 ; pseudo_random_generator:g4|temp_v[9]    ; 3       ;
-; game_logic:g3|snake[2][1]               ; 7       ;
 ; game_logic:g3|snake[1][1]               ; 7       ;
+; game_logic:g3|snake[2][1]               ; 7       ;
 ; game_logic:g3|snake[2][0]               ; 7       ;
 ; game_logic:g3|snake[0][0]               ; 3       ;
 ; game_logic:g3|snake[3][2]               ; 7       ;
+; game_logic:g3|snake[3][6]               ; 8       ;
 ; game_logic:g3|snake[2][6]               ; 8       ;
 ; game_logic:g3|snake[1][6]               ; 8       ;
 ; game_logic:g3|snake[0][6]               ; 3       ;
-; game_logic:g3|snake[3][6]               ; 8       ;
 ; game_logic:g3|snake[3][9]               ; 9       ;
-; game_logic:g3|snake[1][9]               ; 9       ;
 ; game_logic:g3|snake[2][9]               ; 8       ;
+; game_logic:g3|snake[1][9]               ; 9       ;
 ; game_logic:g3|snake[0][9]               ; 3       ;
-; game_logic:g3|direction_out[0]          ; 15      ;
+; game_logic:g3|direction_out[0]          ; 14      ;
 ; game_logic:g3|direction_out[1]          ; 13      ;
 ; debouncer_circuit:g2|temp_direction[0]  ; 2       ;
 ; game_logic:g3|current_direction[0]      ; 1       ;
@@ -367,40 +374,51 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |snake|game_logic:g3|next_cell[1]             ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |snake|vga:g5|h[6]                            ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |snake|game_logic:g3|next_cell[6]             ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |snake|game_logic:g3|next_cell[2]             ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |snake|vga:g5|h[9]                            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |snake|game_logic:g3|next_cell[9]             ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |snake|vga:g5|v[9]                            ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[18][5]             ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[17][7]             ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[16][2]             ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[15][4]             ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[14][6]             ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[18][9]             ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[17][4]             ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[16][4]             ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[15][5]             ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[14][4]             ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[13][5]             ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[12][5]             ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[12][4]             ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[11][5]             ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[10][5]             ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[9][4]              ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[8][8]              ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[7][5]              ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[10][2]             ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[9][2]              ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[8][4]              ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[7][9]              ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[6][5]              ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[5][5]              ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |snake|game_logic:g3|snake[4][4]              ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |snake|game_logic:g3|snake[3][5]              ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |snake|game_logic:g3|snake[2][5]              ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |snake|game_logic:g3|snake[1][0]              ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |snake|game_logic:g3|snake[0][5]              ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |snake|game_logic:g3|snake[3][2]              ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |snake|game_logic:g3|snake[3][4]              ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |snake|game_logic:g3|snake[2][8]              ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |snake|game_logic:g3|snake[1][8]              ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |snake|game_logic:g3|snake[0][1]              ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; Yes        ; |snake|Teclado:g6|reset                       ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |snake|game_logic:g3|snake[3][6]              ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |snake|game_logic:g3|snake[2][6]              ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |snake|game_logic:g3|snake[1][9]              ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |snake|game_logic:g3|snake[0][6]              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |snake|game_logic:g3|snake[1][6]              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |snake|game_logic:g3|snake[0][0]              ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |snake|debouncer_circuit:g2|temp_direction[0] ;
-; 20:1               ; 10 bits   ; 130 LEs       ; 130 LEs              ; 0 LEs                  ; No         ; |snake|game_logic:g3|Mux1                     ;
+; 20:1               ; 10 bits   ; 130 LEs       ; 130 LEs              ; 0 LEs                  ; No         ; |snake|game_logic:g3|Mux0                     ;
 ; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |snake|game_logic:g3|game                     ;
 ; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |snake|game_logic:g3|game                     ;
 ; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; No         ; |snake|game_logic:g3|game                     ;
 ; 24:1               ; 2 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; No         ; |snake|game_logic:g3|temp_cell.border         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Teclado:g6 ;
++----------------+---------+------------------------------+
+; Parameter Name ; Value   ; Type                         ;
++----------------+---------+------------------------------+
+; FREQ_CLK       ; 5000000 ; Signed Integer               ;
++----------------+---------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------+
@@ -518,34 +536,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Teclado:g6"                                                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; ind  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 30                          ;
-; cycloneiii_ff         ; 352                         ;
+; boundary_port         ; 47                          ;
+; cycloneiii_ff         ; 427                         ;
 ;     CLR               ; 45                          ;
-;     ENA               ; 41                          ;
+;     ENA               ; 86                          ;
 ;     ENA CLR           ; 241                         ;
 ;     ENA CLR SCLR      ; 6                           ;
 ;     ENA SLD           ; 5                           ;
 ;     SLD               ; 2                           ;
-;     plain             ; 12                          ;
-; cycloneiii_lcell_comb ; 1740                        ;
-;     arith             ; 201                         ;
+;     plain             ; 42                          ;
+; cycloneiii_lcell_comb ; 1838                        ;
+;     arith             ; 227                         ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 94                          ;
-;         3 data inputs ; 106                         ;
-;     normal            ; 1539                        ;
-;         0 data inputs ; 25                          ;
-;         1 data inputs ; 12                          ;
-;         2 data inputs ; 182                         ;
-;         3 data inputs ; 136                         ;
-;         4 data inputs ; 1184                        ;
+;         2 data inputs ; 119                         ;
+;         3 data inputs ; 107                         ;
+;     normal            ; 1611                        ;
+;         0 data inputs ; 27                          ;
+;         1 data inputs ; 17                          ;
+;         2 data inputs ; 201                         ;
+;         3 data inputs ; 113                         ;
+;         4 data inputs ; 1253                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 20.30                       ;
-; Average LUT depth     ; 11.92                       ;
+; Average LUT depth     ; 11.23                       ;
 +-----------------------+-----------------------------+
 
 
@@ -564,12 +591,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Feb 04 11:16:04 2021
+    Info: Processing started: Thu Feb 04 13:21:05 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off juego -c juego
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file snake.vhd
-    Info (12022): Found design unit 1: snake-Behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 22
+    Info (12022): Found design unit 1: snake-Behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 20
     Info (12023): Found entity 1: snake File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file vga.vhd
     Info (12022): Found design unit 1: vga-Behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/vga.vhd Line: 20
@@ -581,7 +608,7 @@ Info (12021): Found 2 design units, including 0 entities, in source file game_pa
     Info (12022): Found design unit 1: game_package File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_package.vhd Line: 6
     Info (12022): Found design unit 2: game_package-body File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_package.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file game_logic.vhd
-    Info (12022): Found design unit 1: game_logic-Behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 20
+    Info (12022): Found design unit 1: game_logic-Behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 21
     Info (12023): Found entity 1: game_logic File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file debouncer_circuit.vhd
     Info (12022): Found design unit 1: debouncer_circuit-Behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/debouncer_circuit.vhd Line: 15
@@ -589,21 +616,25 @@ Info (12021): Found 2 design units, including 1 entities, in source file debounc
 Info (12021): Found 2 design units, including 1 entities, in source file clock_divider.vhd
     Info (12022): Found design unit 1: clock_divider-Behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/clock_divider.vhd Line: 12
     Info (12023): Found entity 1: clock_divider File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/clock_divider.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file teclado.vhd
+    Info (12022): Found design unit 1: Teclado-behavioral File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/Teclado.vhd Line: 17
+    Info (12023): Found entity 1: Teclado File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/Teclado.vhd Line: 4
 Info (12127): Elaborating entity "snake" for the top level hierarchy
-Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:g1" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 82
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:g1" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 96
 Warning (10492): VHDL Process Statement warning at clock_divider.vhd(22): signal "pulso" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/clock_divider.vhd Line: 22
-Info (12128): Elaborating entity "game_logic" for hierarchy "game_logic:g3" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 87
-Warning (10631): VHDL Process Statement warning at game_logic.vhd(60): inferring latch(es) for signal or variable "tick_time", which holds its previous value in one or more paths through the process File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 60
-Info (10041): Inferred latch for "tick_time[0]" at game_logic.vhd(60) File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 60
-Info (12128): Elaborating entity "debouncer_circuit" for hierarchy "debouncer_circuit:g2" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 98
-Info (12128): Elaborating entity "pseudo_random_generator" for hierarchy "pseudo_random_generator:g4" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 106
-Info (12128): Elaborating entity "vga" for hierarchy "vga:g5" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 110
+Info (12128): Elaborating entity "game_logic" for hierarchy "game_logic:g3" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 101
+Warning (10631): VHDL Process Statement warning at game_logic.vhd(64): inferring latch(es) for signal or variable "tick_time", which holds its previous value in one or more paths through the process File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 64
+Info (10041): Inferred latch for "tick_time[0]" at game_logic.vhd(64) File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 64
+Info (12128): Elaborating entity "debouncer_circuit" for hierarchy "debouncer_circuit:g2" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 114
+Info (12128): Elaborating entity "pseudo_random_generator" for hierarchy "pseudo_random_generator:g4" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 122
+Info (12128): Elaborating entity "vga" for hierarchy "vga:g5" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 126
+Info (12128): Elaborating entity "Teclado" for hierarchy "Teclado:g6" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 136
 Info (278001): Inferred 5 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "pseudo_random_generator:g4|Mod0" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/pseudo_random_generator.vhd Line: 26
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_logic:g3|Div2" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 190
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_logic:g3|Div1" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 190
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_logic:g3|Mod0" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 182
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_logic:g3|Div0" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 182
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_logic:g3|Div2" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 194
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_logic:g3|Div1" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 194
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_logic:g3|Mod0" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 186
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_logic:g3|Div0" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 186
 Info (12130): Elaborated megafunction instantiation "pseudo_random_generator:g4|lpm_divide:Mod0" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/pseudo_random_generator.vhd Line: 26
 Info (12133): Instantiated megafunction "pseudo_random_generator:g4|lpm_divide:Mod0" with the following parameter: File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/pseudo_random_generator.vhd Line: 26
     Info (12134): Parameter "LPM_WIDTHN" = "10"
@@ -620,8 +651,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_t3c File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/db/add_sub_t3c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
     Info (12023): Found entity 1: add_sub_u3c File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/db/add_sub_u3c.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "game_logic:g3|lpm_divide:Div2" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 190
-Info (12133): Instantiated megafunction "game_logic:g3|lpm_divide:Div2" with the following parameter: File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 190
+Info (12130): Elaborated megafunction instantiation "game_logic:g3|lpm_divide:Div2" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 194
+Info (12133): Instantiated megafunction "game_logic:g3|lpm_divide:Div2" with the following parameter: File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 194
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -632,32 +663,36 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_llh File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/db/sign_div_unsign_llh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_khe.tdf
     Info (12023): Found entity 1: alt_u_div_khe File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/db/alt_u_div_khe.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "game_logic:g3|lpm_divide:Mod0" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 182
-Info (12133): Instantiated megafunction "game_logic:g3|lpm_divide:Mod0" with the following parameter: File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 182
+Info (12130): Elaborated megafunction instantiation "game_logic:g3|lpm_divide:Mod0" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 186
+Info (12133): Instantiated megafunction "game_logic:g3|lpm_divide:Mod0" with the following parameter: File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 186
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "game_logic:g3|lpm_divide:Div0" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 182
-Info (12133): Instantiated megafunction "game_logic:g3|lpm_divide:Div0" with the following parameter: File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 182
+Info (12130): Elaborated megafunction instantiation "game_logic:g3|lpm_divide:Div0" File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 186
+Info (12133): Instantiated megafunction "game_logic:g3|lpm_divide:Div0" with the following parameter: File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 186
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 63
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/game_logic.vhd Line: 67
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Dis1[1]" is stuck at GND File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 17
+    Warning (13410): Pin "Dis1[2]" is stuck at GND File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 17
+    Warning (13410): Pin "Dis1[6]" is stuck at VCC File: C:/Users/Isaac/Desktop/VLSI/ProyectoVLSI/snake.vhd Line: 17
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1823 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 24 output pins
-    Info (21061): Implemented 1793 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4825 megabytes
-    Info: Processing ended: Thu Feb 04 11:16:23 2021
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:27
+Info (21057): Implemented 1975 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 1928 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Thu Feb 04 13:21:21 2021
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:26
 
 

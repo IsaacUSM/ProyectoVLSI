@@ -71,12 +71,12 @@ CHIP  "juego"  ASSIGNED TO AN: 10M50DAF484C7G
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A1        : gnd    :                   :         :           :                
-RESERVED_INPUT               : A2        :        :                   :         : 8         :                
+manzana_aleatoria[4]         : A2        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT               : A3        :        :                   :         : 8         :                
 RESERVED_INPUT               : A4        :        :                   :         : 8         :                
-manzana_aleatoria[5]         : A5        : output : 2.5 V             :         : 8         : N              
-manzana_aleatoria[4]         : A6        : output : 2.5 V             :         : 8         : N              
-down                         : A7        : input  : 2.5 V             :         : 7         : Y              
+RESERVED_INPUT               : A5        :        :                   :         : 8         :                
+RESERVED_INPUT               : A6        :        :                   :         : 8         :                
+RESERVED_INPUT               : A7        :        :                   :         : 7         :                
 RESERVED_INPUT               : A8        :        :                   :         : 7         :                
 RESERVED_INPUT               : A9        :        :                   :         : 7         :                
 RESERVED_INPUT               : A10       :        :                   :         : 7         :                
@@ -86,8 +86,8 @@ RESERVED_INPUT               : A13       :        :                   :         
 RESERVED_INPUT               : A14       :        :                   :         : 7         :                
 RESERVED_INPUT               : A15       :        :                   :         : 7         :                
 RESERVED_INPUT               : A16       :        :                   :         : 7         :                
-RESERVED_INPUT               : A17       :        :                   :         : 7         :                
-RESERVED_INPUT               : A18       :        :                   :         : 7         :                
+Dis1[4]                      : A17       : output : 2.5 V             :         : 7         : Y              
+Dis1[5]                      : A18       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT               : A19       :        :                   :         : 7         :                
 RESERVED_INPUT               : A20       :        :                   :         : 7         :                
 RESERVED_INPUT               : A21       :        :                   :         : 6         :                
@@ -102,8 +102,8 @@ RESERVED_INPUT               : AA7       :        :                   :         
 RESERVED_INPUT               : AA8       :        :                   :         : 3         :                
 RESERVED_INPUT               : AA9       :        :                   :         : 3         :                
 RESERVED_INPUT               : AA10      :        :                   :         : 3         :                
-RESERVED_INPUT               : AA11      :        :                   :         : 4         :                
-RESERVED_INPUT               : AA12      :        :                   :         : 4         :                
+COLUM[2]                     : AA11      : input  : 2.5 V             :         : 4         : Y              
+COLUM[3]                     : AA12      : input  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT               : AA13      :        :                   :         : 4         :                
 RESERVED_INPUT               : AA14      :        :                   :         : 4         :                
 RESERVED_INPUT               : AA15      :        :                   :         : 4         :                
@@ -118,11 +118,11 @@ GND                          : AB1       : gnd    :                   :         
 RESERVED_INPUT               : AB2       :        :                   :         : 3         :                
 RESERVED_INPUT               : AB3       :        :                   :         : 3         :                
 RESERVED_INPUT               : AB4       :        :                   :         : 3         :                
-RESERVED_INPUT               : AB5       :        :                   :         : 3         :                
-RESERVED_INPUT               : AB6       :        :                   :         : 3         :                
-RESERVED_INPUT               : AB7       :        :                   :         : 3         :                
-RESERVED_INPUT               : AB8       :        :                   :         : 3         :                
-RESERVED_INPUT               : AB9       :        :                   :         : 3         :                
+FIL[0]                       : AB5       : output : 2.5 V             :         : 3         : Y              
+FIL[1]                       : AB6       : output : 2.5 V             :         : 3         : Y              
+FIL[2]                       : AB7       : output : 2.5 V             :         : 3         : Y              
+FIL[3]                       : AB8       : output : 2.5 V             :         : 3         : Y              
+COLUM[0]                     : AB9       : input  : 2.5 V             :         : 3         : Y              
 RESERVED_INPUT               : AB10      :        :                   :         : 4         :                
 RESERVED_INPUT               : AB11      :        :                   :         : 4         :                
 RESERVED_INPUT               : AB12      :        :                   :         : 4         :                
@@ -139,11 +139,11 @@ GND                          : AB22      : gnd    :                   :         
 RESERVED_INPUT               : B1        :        :                   :         : 8         :                
 RESERVED_INPUT               : B2        :        :                   :         : 8         :                
 RESERVED_INPUT               : B3        :        :                   :         : 8         :                
-RESERVED_INPUT               : B4        :        :                   :         : 8         :                
-RESERVED_INPUT               : B5        :        :                   :         : 8         :                
+manzana_aleatoria[9]         : B4        : output : 2.5 V             :         : 8         : N              
+manzana_aleatoria[6]         : B5        : output : 2.5 V             :         : 8         : N              
 GND                          : B6        : gnd    :                   :         :           :                
-manzana_aleatoria[3]         : B7        : output : 2.5 V             :         : 8         : N              
-up                           : B8        : input  : 2.5 V             :         : 7         : Y              
+RESERVED_INPUT               : B7        :        :                   :         : 8         :                
+RESERVED_INPUT               : B8        :        :                   :         : 7         :                
 GND                          : B9        : gnd    :                   :         :           :                
 RESERVED_INPUT               : B10       :        :                   :         : 7         :                
 RESERVED_INPUT               : B11       :        :                   :         : 7         :                
@@ -151,31 +151,31 @@ RESERVED_INPUT               : B12       :        :                   :         
 GND                          : B13       : gnd    :                   :         :           :                
 RESERVED_INPUT               : B14       :        :                   :         : 7         :                
 RESERVED_INPUT               : B15       :        :                   :         : 7         :                
-RESERVED_INPUT               : B16       :        :                   :         : 7         :                
-RESERVED_INPUT               : B17       :        :                   :         : 7         :                
+Dis1[3]                      : B16       : output : 2.5 V             :         : 7         : Y              
+Dis1[6]                      : B17       : output : 2.5 V             :         : 7         : Y              
 GND                          : B18       : gnd    :                   :         :           :                
 RESERVED_INPUT               : B19       :        :                   :         : 7         :                
 RESERVED_INPUT               : B20       :        :                   :         : 6         :                
 RESERVED_INPUT               : B21       :        :                   :         : 6         :                
 RESERVED_INPUT               : B22       :        :                   :         : 6         :                
 RESERVED_INPUT               : C1        :        :                   :         : 1B        :                
-RESERVED_INPUT               : C2        :        :                   :         : 8         :                
-RESERVED_INPUT               : C3        :        :                   :         : 8         :                
+manzana_aleatoria[0]         : C2        : output : 2.5 V             :         : 8         : N              
+manzana_aleatoria[1]         : C3        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT               : C4        :        :                   :         : 8         :                
-RESERVED_INPUT               : C5        :        :                   :         : 8         :                
-manzana_aleatoria[6]         : C6        : output : 2.5 V             :         : 8         : N              
+manzana_aleatoria[8]         : C5        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT               : C6        :        :                   :         : 8         :                
 RESERVED_INPUT               : C7        :        :                   :         : 8         :                
-manzana_aleatoria[2]         : C8        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT               : C8        :        :                   :         : 8         :                
 RESERVED_INPUT               : C9        :        :                   :         : 7         :                
-reset                        : C10       : input  : 2.5 V             :         : 7         : Y              
-rightt                       : C11       : input  : 2.5 V             :         : 7         : Y              
+RESERVED_INPUT               : C10       :        :                   :         : 7         :                
+RESERVED_INPUT               : C11       :        :                   :         : 7         :                
 RESERVED_INPUT               : C12       :        :                   :         : 7         :                
 RESERVED_INPUT               : C13       :        :                   :         : 7         :                
-RESERVED_INPUT               : C14       :        :                   :         : 7         :                
-RESERVED_INPUT               : C15       :        :                   :         : 7         :                
-RESERVED_INPUT               : C16       :        :                   :         : 7         :                
-RESERVED_INPUT               : C17       :        :                   :         : 7         :                
-RESERVED_INPUT               : C18       :        :                   :         : 7         :                
+Dis0[0]                      : C14       : output : 2.5 V             :         : 7         : Y              
+Dis0[2]                      : C15       : output : 2.5 V             :         : 7         : Y              
+Dis0[3]                      : C16       : output : 2.5 V             :         : 7         : Y              
+Dis0[6]                      : C17       : output : 2.5 V             :         : 7         : Y              
+Dis1[0]                      : C18       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT               : C19       :        :                   :         : 7         :                
 RESERVED_INPUT               : C20       :        :                   :         : 6         :                
 RESERVED_INPUT               : C21       :        :                   :         : 6         :                
@@ -184,20 +184,20 @@ RESERVED_INPUT               : D1        :        :                   :         
 RESERVED_INPUT               : D2        :        :                   :         : 1B        :                
 RESERVED_INPUT               : D3        :        :                   :         : 1B        :                
 GND                          : D4        : gnd    :                   :         :           :                
-RESERVED_INPUT               : D5        :        :                   :         : 8         :                
+manzana_aleatoria[2]         : D5        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT               : D6        :        :                   :         : 8         :                
-manzana_aleatoria[7]         : D7        : output : 2.5 V             :         : 8         : N              
-manzana_aleatoria[9]         : D8        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT               : D7        :        :                   :         : 8         :                
+RESERVED_INPUT               : D8        :        :                   :         : 8         :                
 RESERVED_INPUT               : D9        :        :                   :         : 8         :                
 RESERVED_INPUT               : D10       :        :                   :         : 8         :                
 GND                          : D11       : gnd    :                   :         :           :                
-leftt                        : D12       : input  : 2.5 V             :         : 7         : Y              
+RESERVED_INPUT               : D12       :        :                   :         : 7         :                
 RESERVED_INPUT               : D13       :        :                   :         : 7         :                
 RESERVED_INPUT               : D14       :        :                   :         : 7         :                
 RESERVED_INPUT               : D15       :        :                   :         : 7         :                
 GND                          : D16       : gnd    :                   :         :           :                
-RESERVED_INPUT               : D17       :        :                   :         : 7         :                
-RESERVED_INPUT               : D18       :        :                   :         : 6         :                
+Dis0[5]                      : D17       : output : 2.5 V             :         : 7         : Y              
+Dis1[1]                      : D18       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT               : D19       :        :                   :         : 6         :                
 GND                          : D20       : gnd    :                   :         :           :                
 RESERVED_INPUT               : D21       :        :                   :         : 6         :                
@@ -207,19 +207,19 @@ GND                          : E2        : gnd    :                   :         
 RESERVED_INPUT               : E3        :        :                   :         : 1A        :                
 RESERVED_INPUT               : E4        :        :                   :         : 1A        :                
 NC                           : E5        :        :                   :         :           :                
-RESERVED_INPUT               : E6        :        :                   :         : 8         :                
+manzana_aleatoria[7]         : E6        : output : 2.5 V             :         : 8         : N              
 GND                          : E7        : gnd    :                   :         :           :                
-RESERVED_INPUT               : E8        :        :                   :         : 8         :                
-manzana_aleatoria[8]         : E9        : output : 2.5 V             :         : 8         : N              
-manzana_aleatoria[0]         : E10       : output : 2.5 V             :         : 8         : N              
+manzana_aleatoria[5]         : E8        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT               : E9        :        :                   :         : 8         :                
+RESERVED_INPUT               : E10       :        :                   :         : 8         :                
 RESERVED_INPUT               : E11       :        :                   :         : 8         :                
 RESERVED_INPUT               : E12       :        :                   :         : 7         :                
 RESERVED_INPUT               : E13       :        :                   :         : 7         :                
 RESERVED_INPUT               : E14       :        :                   :         : 7         :                
-RESERVED_INPUT               : E15       :        :                   :         : 7         :                
-RESERVED_INPUT               : E16       :        :                   :         : 7         :                
+Dis0[1]                      : E15       : output : 2.5 V             :         : 7         : Y              
+Dis0[4]                      : E16       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT               : E17       :        :                   :         : 6         :                
-RESERVED_INPUT               : E18       :        :                   :         : 6         :                
+Dis1[2]                      : E18       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT               : E19       :        :                   :         : 6         :                
 RESERVED_INPUT               : E20       :        :                   :         : 6         :                
 RESERVED_INPUT               : E21       :        :                   :         : 6         :                
@@ -230,7 +230,7 @@ RESERVED_INPUT               : F3        :        :                   :         
 RESERVED_INPUT               : F4        :        :                   :         : 1A        :                
 RESERVED_INPUT               : F5        :        :                   :         : 1A        :                
 NC                           : F6        :        :                   :         :           :                
-RESERVED_INPUT               : F7        :        :                   :         : 8         :                
+manzana_aleatoria[3]         : F7        : output : 2.5 V             :         : 8         : N              
 ~ALTERA_CONF_DONE~ / RESERVED_INPUT : F8        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
 VCCIO8                       : F9        : power  :                   : 2.5V    : 8         :                
 GND                          : F10       : gnd    :                   :         :           :                
@@ -299,7 +299,7 @@ GND                          : J6        : gnd    :                   :         
 VCCINT                       : J7        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT               : J8        :        :                   :         : 1A        :                
 RESERVED_INPUT               : J9        :        :                   :         : 1A        :                
-manzana_aleatoria[1]         : J10       : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT               : J10       :        :                   :         : 8         :                
 RESERVED_INPUT               : J11       :        :                   :         : 7         :                
 RESERVED_INPUT               : J12       :        :                   :         : 7         :                
 RESERVED_INPUT               : J13       :        :                   :         : 7         :                
@@ -541,7 +541,7 @@ RESERVED_INPUT               : Y6        :        :                   :         
 RESERVED_INPUT               : Y7        :        :                   :         : 3         :                
 RESERVED_INPUT               : Y8        :        :                   :         : 3         :                
 GND                          : Y9        : gnd    :                   :         :           :                
-RESERVED_INPUT               : Y10       :        :                   :         : 3         :                
+COLUM[1]                     : Y10       : input  : 2.5 V             :         : 3         : Y              
 RESERVED_INPUT               : Y11       :        :                   :         : 4         :                
 GND                          : Y12       : gnd    :                   :         :           :                
 RESERVED_INPUT               : Y13       :        :                   :         : 4         :                

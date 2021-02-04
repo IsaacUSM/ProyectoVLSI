@@ -6,17 +6,15 @@ use work.game_package.all;
 
 entity snake is
 	PORT(	clk: in std_logic;
-			reset: in std_logic;
-			leftt:in std_logic;
-			rightt:in std_logic;
-			up:in std_logic;
-			down:in std_logic;
 			main_vsync: out std_logic;
 			main_hsync: out std_logic;
+			COLUM: in std_logic_vector(3 downto 0);
+			FIL: out std_logic_vector(3 downto 0);
 			manzana_aleatoria: out integer range 0 to 639;
 			r: out std_logic_vector(3 downto 0);
 			g: out std_logic_vector(3 downto 0);
-			b: out std_logic_vector(3 downto 0));
+			b: out std_logic_vector(3 downto 0);
+			Dis0, Dis1: buffer std_logic_vector(6 downto 0));
 end snake;
 
 architecture Behavioral of snake is
@@ -50,21 +48,32 @@ end component;
 COMPONENT game_logic is
 	PORT(	clk:in std_logic;
 			reset:in std_logic;
-			direction:in std_logic_vector(1 downto 0);
+			direction: in std_logic_vector(1 downto 0);
 			random_food: in integer range 0 to 639;
 			vsync:in std_logic;
 			cell_out:out cell_type;
 			hor: in integer range 0 to 799;
 			ver: in integer range 0 to 520;
 			game_over_reset:out std_logic;
-			current_game_state: out game_state);
+			current_game_state: out game_state;
+			Display0, Display1: buffer std_logic_vector(6 downto 0));
 end component;
 COMPONENT pseudo_random_generator is
 	PORT( clk:in std_logic;
 			cur_game: in game_state;
 			random:out integer range 0 to 639);
 end component;
-
+COMPONENT Teclado is
+	Port( CLK: IN STD_LOGIC;
+			COLUMNAS: in std_logic_vector(3 downto 0);
+			FILAS: out std_logic_vector(3 downto 0);
+			reset: out std_logic;
+			leftt:out std_logic;
+			rightt:out std_logic;
+			up:out std_logic;
+			down:out std_logic;
+			IND: out std_logic);
+end component;
 signal cell:cell_type;
 signal clk25:std_logic;
 signal dclk:std_logic;
@@ -77,6 +86,11 @@ signal vertical: integer range 0 to 520;
 signal endgame: std_logic;
 signal totalreset: std_logic;
 signal gamestate: game_state;
+signal reset: std_logic;
+signal leftt: std_logic;
+signal rightt: std_logic;
+signal up: std_logic;
+signal down: std_logic;
 begin
 totalreset <= endgame OR reset;
 g1: clock_divider PORT MAP(clk50 => clk,
@@ -93,7 +107,9 @@ g3: game_logic PORT MAP(clk => clk25,
 								hor => horizontal,
 								ver => vertical,
 								game_over_reset => endgame,
-								current_game_state => gamestate);
+								current_game_state => gamestate,
+								Display0 => Dis0,
+								Display1 => Dis1);
 
 g2: debouncer_circuit PORT MAP(	debouncer_clk => dclk,
 											reset => totalreset,
@@ -117,6 +133,14 @@ g5: vga PORT MAP(	reset => totalreset,
 						blue => b,
 						hor => horizontal,
 						ver => vertical);
+g6: Teclado PORT MAP(COLUMNAS => COLUM,
+							FILAS => FIL,
+							CLK => clk,
+							reset => reset,
+							leftt => leftt,
+							rightt => rightt,
+							up => up,
+							down => down);
 main_vsync<= vs;
 main_hsync<= hs;
 manzana_aleatoria <= randomfood;
