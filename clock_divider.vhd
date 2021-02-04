@@ -30,8 +30,6 @@ begin
 			m <= m + "01";
 			counter <= counter + 1 ;
 		end if;
-		--	clk25 <= m(1);
-		--	clk25 <= pulso;
 		clkdeb <= counter(19);
 	end process;
 end Behavioral;

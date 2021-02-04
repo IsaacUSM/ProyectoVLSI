@@ -117,7 +117,6 @@ g5: vga PORT MAP(	reset => totalreset,
 						blue => b,
 						hor => horizontal,
 						ver => vertical);
-
 main_vsync<= vs;
 main_hsync<= hs;
 manzana_aleatoria <= randomfood;
